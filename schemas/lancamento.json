@@ -1,0 +1,21 @@
+{
+    "tipo":{
+        "type":"string"
+    },
+    "valor":{
+        "type":"number"
+    },
+    "data":{
+        "type":"date",
+        "default":"return date('y-m-d');"
+    },
+    "mes":{
+        "type":"string"
+    },
+    "conta":{
+        "type":"string"
+    },
+    "ano":{
+        "type":"number"
+    }
+}

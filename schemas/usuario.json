@@ -1,0 +1,15 @@
+{
+    "nome":{
+        "type":"string"
+    },
+    "senha":{
+        "type":"string"
+    },
+    "email":{
+        "type":"string"
+    },
+    "saldo":{
+        "type":"number",
+        "default":"return 0;"
+    }
+}

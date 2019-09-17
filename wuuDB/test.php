@@ -1,7 +1,10 @@
-<pre><?php 
+<pre><?php
+/**
+ * Dev by: m.me/me.wuster
+ */
+
 wuuDB::mysql();
 wuuDB::setDatabase("wuu_test");
-
 // $schema = json_decode( file_get_contents('my_schema.json') );
 
 #Simulating json object

@@ -2,7 +2,7 @@
 include_once "config.php";
 
 Flight::route('/', function(){
-    echo 'hello world!';
+    echo file_get_contents("index.html");
 });
 
 Flight::route('/user/register', function(){

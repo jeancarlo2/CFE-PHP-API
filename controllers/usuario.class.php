@@ -25,6 +25,7 @@ class usuario{
     public static function checkEmail($email){
         self::init();
         self::$db
+            ->selectFields(['email'])
             ->where([
                 ["email","=",$email]
             ]);

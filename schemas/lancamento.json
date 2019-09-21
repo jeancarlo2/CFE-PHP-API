@@ -1,4 +1,7 @@
 {
+    "userid":{
+        "type":"string"
+    },
     "tipo":{
         "type":"string"
     },

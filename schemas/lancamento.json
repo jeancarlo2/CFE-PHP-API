@@ -13,12 +13,14 @@
         "default":"return date('y-m-d');"
     },
     "mes":{
-        "type":"string"
-    },
-    "conta":{
-        "type":"string"
+        "type":"string",
+        "default":"return date('m');"
     },
     "ano":{
-        "type":"number"
+        "type":"number",
+        "default":"return date('m');"
+    },
+    "conta":{
+        "type":"boolean"
     }
 }

@@ -2,6 +2,9 @@
     "userid":{
         "type":"string"
     },
+    "titulo":{
+        "type":"string"
+    },
     "tipo":{
         "type":"string"
     },

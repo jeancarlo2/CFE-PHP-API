@@ -21,4 +21,8 @@ Flight::route('/lancamento/@userid', function($userid){
     json(lancamento::getByUserID($userid));
 });
 
+Flight::route('/lancamento/create/@userid', function($userid){
+    json(lancamento::create($userid, $_REQUEST));
+});
+
 Flight::start();

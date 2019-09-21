@@ -16,12 +16,12 @@
         "default":"return date('y-m-d');"
     },
     "mes":{
-        "type":"string",
+        "type":"number",
         "default":"return date('m');"
     },
     "ano":{
         "type":"number",
-        "default":"return date('m');"
+        "default":"return date('Y');"
     },
     "conta":{
         "type":"boolean"

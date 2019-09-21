@@ -17,8 +17,8 @@ Flight::route('/user/check-email/@email', function($email){
     json(usuario::checkEmail($email));
 });
 
-Flight::route('/lancamento/@userid', function($userid){
-    json(lancamento::getByUserID($userid));
+Flight::route('/lancamento/@userid/@mes/@ano', function($userid, $mes, $ano){
+    json(lancamento::getByUserID($userid, $mes, $ano));
 });
 
 Flight::route('/lancamento/create/@userid', function($userid){

@@ -25,4 +25,8 @@ Flight::route('/lancamento/create/@userid', function($userid){
     json(lancamento::create($userid, $_REQUEST));
 });
 
+Flight::route('/lancamento/delete/@id', function($id){
+    json(lancamento::delete($id));
+});
+
 Flight::start();

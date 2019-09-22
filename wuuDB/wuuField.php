@@ -48,7 +48,7 @@ class wuuField{
                     $this->_mysql = "DATE";    
                     break;
                 case "number":
-                    $this->_mysql = "BIGINT"; 
+                    $this->_mysql = "FLOAT"; 
                     break;
                 case "array":
                     $this->_mysql = "BLOB"; 

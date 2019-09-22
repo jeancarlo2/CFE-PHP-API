@@ -12,7 +12,9 @@ class lancamento{
                 ["userid", "=", $id],
                 ["mes", "=", $mes],
                 ["ano", "=", $ano]
-            ]);
+            ])
+            ->by('_id')
+            ->order("DESC");
         return self::$db->findAll();
     }
     public static function delete($id){

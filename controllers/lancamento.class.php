@@ -9,9 +9,11 @@ class lancamento{
         self::init();
         self::$db
             ->where([
-                ["userid", "=", $id],
-                ["mes", "=", $mes],
-                ["ano", "=", $ano]
+                ["userid",  "=", $id],
+                ["mes",     "=", $mes],
+                ["ano",     "=", $ano],
+                ["init",    "IS NULL", ""],
+
             ])
             ->by('_id')
             ->order("DESC");

@@ -5,6 +5,18 @@ class lancamento{
     public static function init(){
         self::$db = new wuuModel("Lancamento", json_decode( file_get_contents(__DIR__.'/../schemas/lancamento.json') ));
     }
+    public static function getConta($id, $mes=false, $ano=false){
+        self::init();
+        $where  = [];
+        $where[]=["contaid", "=", $id];
+        if($mes) $where[]=["mes", "=", $mes];
+        if($ano) $where[]=["ano", "=", $ano];
+        self::$db
+            ->where($where)
+            ->by('_id')
+            ->order("DESC");
+        return self::$db->findAll();
+    }
     public static function getByUserID($id, $mes, $ano){
         self::init();
         self::$db

@@ -10,21 +10,31 @@ class conta{
         self::$db
             ->where([
                 ["userid",  "=", $id],
+                ["", "(`ano` < '{$ano}' OR `ano` = '{$ano}' AND `mes` <= '{$mes}' )",""],
                 ["tipo",    "IS NULL", ""],
             ])
             ->by('_id')
             ->order("DESC");
         $contasFixas = self::$db->findAll();
         self::$db->reset();
+
+        foreach($contasFixas as $k => $conta){
+            $contasFixas[$k]["pago"] = lancamento::getConta($conta["_id"], $mes, $ano);
+        }
         self::$db
             ->where([
-                ["userid",  "=", $id],
-                ["",  "( `expano` >= '{$ano}' OR `expano` = '{$ano}' AND `expmes` >= '{$mes}')", ""],
-                ["tipo",    "IS NOT NULL", ""],
+                ["userid", "=", $id],
+                ["", "(`ano` < '{$ano}' OR `ano` = '{$ano}' AND `mes` <= '{$mes}')",""],
+                ["", "(`expano` > '{$ano}' OR `expano` = '{$ano}' AND `expmes` >= '{$mes}')",""],
+                ["tipo","IS NOT NULL", ""],
             ])
             ->by('_id')
             ->order("DESC");
         $contasParceladas = self::$db->findAll();
+        foreach($contasParceladas as $k => $conta){
+            $contasParceladas[$k]["pago"] = lancamento::getConta($conta["_id"], $mes, $ano);
+            $contasParceladas[$k]["pagos"] = lancamento::getConta($conta["_id"]);
+        }
         return [ 
             "parceladas" => $contasParceladas,
             "fixas" => $contasFixas

@@ -10,14 +10,23 @@ class conta{
         self::$db
             ->where([
                 ["userid",  "=", $id],
-                ["mes",     "=", $mes],
-                ["ano",     "=", $ano],
-                ["init",    "IS NULL", ""],
-
+                ["tipo",    "IS NULL", ""],
             ])
             ->by('_id')
             ->order("DESC");
-        return self::$db->findAll();
+        $contasFixas = self::$db->findAll();
+        var_dump($contasFixas);
+        self::$db
+            ->where([
+                ["userid",  "=", $id],
+                ["tipo",    "IS NOT NULL", ""],
+            ])
+            ->by('_id')
+            ->order("DESC");
+        $contasParceladas = self::$db->findAll();
+        var_dump($contasParceladas);
+
+        return ;
     }
     public static function create($id, $arr, $init=0){
         self::init();

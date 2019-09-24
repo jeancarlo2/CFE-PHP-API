@@ -100,11 +100,12 @@ class lancamento{
             ->set("titulo", $arr["titulo"])
             ->set("tipo",   $arr["tipo"])
             ->set("valor",  $arr["valor"])
-            ->set("init",   $init)
-            ->set("conta",  $arr["conta"]);
-        if(isset($arr["data"]))    self::$db->set("data",  $arr["data"]);
-        if(isset($arr["mes"]))     self::$db->set("mes",   $arr["mes"]);
-        if(isset($arr["ano"]))     self::$db->set("ano",   $arr["ano"]);
+            ->set("init",   $init);
+        if(isset($arr["contaid"]))  self::$db->set("contaid",  $arr["contaid"]);
+        if(isset($arr["metaid"]))   self::$db->set("metaid",  $arr["metaid"]);
+        if(isset($arr["data"]))     self::$db->set("data",  $arr["data"]);
+        if(isset($arr["mes"]))      self::$db->set("mes",   $arr["mes"]);
+        if(isset($arr["ano"]))      self::$db->set("ano",   $arr["ano"]);
         return self::$db->save();
     }
 }

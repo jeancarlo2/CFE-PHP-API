@@ -1,0 +1,35 @@
+{
+    "userid":{
+        "type":"string"
+    },
+    "titulo":{
+        "type":"string"
+    },
+    "tipo":{
+        "type":"string"
+    },
+    "valor":{
+        "type":"number"
+    },
+    "data":{
+        "type":"date",
+        "default":"return date('y-m-d');"
+    },
+    "mes":{
+        "type":"number",
+        "default":"return date('m');"
+    },
+    "ano":{
+        "type":"number",
+        "default":"return date('Y');"
+    },
+    "expmes":{
+        "type":"number"
+    },
+    "expano":{
+        "type":"number"
+    },
+    "parcelas":{
+        "type":"number"
+    }
+}

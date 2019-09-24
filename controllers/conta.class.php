@@ -15,18 +15,20 @@ class conta{
             ->by('_id')
             ->order("DESC");
         $contasFixas = self::$db->findAll();
-        var_dump($contasFixas);
+        self::$db->reset();
         self::$db
             ->where([
                 ["userid",  "=", $id],
+                ["",  "( `expano` >= '{$ano}' OR `expano` = '{$ano}' AND `expmes` >= '{$mes}')", ""],
                 ["tipo",    "IS NOT NULL", ""],
             ])
             ->by('_id')
             ->order("DESC");
         $contasParceladas = self::$db->findAll();
-        var_dump($contasParceladas);
-
-        return ;
+        return [ 
+            "parceladas" => $contasParceladas,
+            "fixas" => $contasFixas
+        ];
     }
     public static function create($id, $arr, $init=0){
         self::init();

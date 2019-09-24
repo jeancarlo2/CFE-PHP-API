@@ -26,7 +26,9 @@ class wuuQuery{
         $count  = 0;
         foreach($fields as $k => $field){
             $count++;
-            $str.= "`{$field[0]}` {$field[1]} ".(($field[2]) ? "'{$field[2]}'":'');
+            $str.= (($field[0]) ? "`{$field[0]}` ":'');
+            $str.= "{$field[1]} ";
+            $str.= (($field[2]) ? "'{$field[2]}'":'');
             $str.= ($count == $size) ? "" : " AND " ; 
         }
         $this->where = $str;

@@ -23,8 +23,11 @@
         "type":"number",
         "default":"return date('Y');"
     },
-    "conta":{
-        "type":"boolean"
+    "contaid":{
+        "type":"number"
+    },
+    "metaid":{
+        "type":"number"
     },
     "init":{
         "type":"boolean"

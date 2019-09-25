@@ -5,6 +5,20 @@ class lancamento{
     public static function init(){
         self::$db = new wuuModel("Lancamento", json_decode( file_get_contents(__DIR__.'/../schemas/lancamento.json') ));
     }
+    public static function getMeta($id){
+        self::init();
+        self::$db
+            ->where([
+                ["metaid", "=", $id]
+            ])
+            ->by('_id')
+            ->order("DESC");
+        $total = 0;
+        foreach(self::$db->findAll() as $meta){
+            $total+=$meta["valor"];
+        }
+        return $total;
+    }
     public static function getConta($id, $mes=false, $ano=false){
         self::init();
         $where  = [];

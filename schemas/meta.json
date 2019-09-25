@@ -1,0 +1,11 @@
+{
+    "userid":{
+        "type":"string"
+    },
+    "titulo":{
+        "type":"string"
+    },
+    "valor":{
+        "type":"string"
+    }
+}

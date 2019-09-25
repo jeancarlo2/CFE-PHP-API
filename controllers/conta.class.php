@@ -40,9 +40,6 @@ class conta{
             "fixas" => $contasFixas
         ];
     }
-    public static function pagar(){
-
-    }
     public static function delete($id){
         self::init();
         return self::$db->remove($id);

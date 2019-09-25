@@ -11,6 +11,7 @@ wuuDB::setDatabase("cfe");
 require_once 'controllers/usuario.class.php';
 require_once 'controllers/lancamento.class.php';
 require_once 'controllers/conta.class.php';
+require_once 'controllers/meta.class.php';
 /**
  * Funções
  */

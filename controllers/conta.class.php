@@ -5,7 +5,7 @@ class conta{
     public static function init(){
         self::$db = new wuuModel("Conta", json_decode( file_get_contents(__DIR__.'/../schemas/conta.json') ));
     }
-    public static function getByUserID($id, $mes, $ano){
+    public static function getByUserID($id, $mes, $ano, $limit){
         self::init();
         self::$db
             ->where([
@@ -15,6 +15,7 @@ class conta{
             ])
             ->by('_id')
             ->order("DESC");
+        if($limit) self::$db->limit($limit);
         $contasFixas = self::$db->findAll();
         self::$db->reset();
 
@@ -30,6 +31,7 @@ class conta{
             ])
             ->by('_id')
             ->order("DESC");
+        if($limit) self::$db->limit($limit);
         $contasParceladas = self::$db->findAll();
         foreach($contasParceladas as $k => $conta){
             $contasParceladas[$k]["pago"] = lancamento::getConta($conta["_id"], $mes, $ano);

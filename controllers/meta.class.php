@@ -17,7 +17,7 @@ class meta{
             ->set("valor",  $arr["valor"]);
         return self::$db->save();
     }
-    public static function getByUserID($id){
+    public static function getByUserID($id, $limit){
         self::init();
         self::$db
             ->where([
@@ -25,6 +25,7 @@ class meta{
             ])
             ->by('_id')
             ->order("DESC");
+        if($limit) self::$db->limit($limit);
         $metas = self::$db->findAll();
         foreach($metas as $k => $meta) $metas[$k]["pago"] = lancamento::getMeta($meta["_id"]);
         return $metas;

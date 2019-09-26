@@ -1,7 +1,7 @@
 <?php
 include_once "config.php";
 
-Flight::route('/', function(){ });
+Flight::route('/', function(){ if(is_file("index.html")) include_once "index.html";  });
 
 include_once "routes/usuario.php"; #Rotas do usuário
 include_once "routes/lancamento.php"; #Rotas para lançamentos

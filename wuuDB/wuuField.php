@@ -51,6 +51,7 @@ class wuuField{
                     $this->_mysql = "FLOAT"; 
                     break;
                 case "array":
+                case "text":
                     $this->_mysql = "BLOB"; 
                     break;
             }

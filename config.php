@@ -2,9 +2,10 @@
 header("Access-Control-Allow-Origin: *");
 require_once 'flight/Flight.php';
 require_once 'wuuDB/autoload.php';
-// wuuDB::mysql("localhost","appc_db","appc_db");
 wuuDB::mysql();
 wuuDB::setDatabase("cfe");
+// wuuDB::mysql("127.0.0.1","appc_db","appc_db");
+// wuuDB::setDatabase("appc_db");
 /**
  * Controladores
  */

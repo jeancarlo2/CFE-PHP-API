@@ -22,6 +22,10 @@ class usuario{
             ]);
         return self::$db->find();
     }
+    public function delete($id){
+        self::init();
+        return self::$db->remove($id);
+    }
     public static function checkEmail($email){
         self::init();
         self::$db

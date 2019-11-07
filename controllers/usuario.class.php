@@ -2,7 +2,7 @@
 
 class usuario{
     private static $db;
-    public static function init(){
+    private static function init(){
         self::$db = new wuuModel("Usuarios", json_decode( file_get_contents(__DIR__.'/../schemas/usuario.json') ));
     }
     public static function register($arr){

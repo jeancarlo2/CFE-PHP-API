@@ -1,0 +1,11 @@
+{
+    "listaid":{
+        "type":"string"
+    },
+    "titulo":{
+        "type":"string"
+    },
+    "valor":{
+        "type":"string"
+    }
+}

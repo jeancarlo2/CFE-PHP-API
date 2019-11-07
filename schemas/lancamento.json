@@ -29,6 +29,9 @@
     "metaid":{
         "type":"number"
     },
+    "itemid":{
+        "type":"number"
+    },
     "init":{
         "type":"boolean"
     }

@@ -1,0 +1,12 @@
+{
+    "userid":{
+        "type":"string"
+    },
+    "titulo":{
+        "type":"string"
+    },
+    "data":{
+        "type":"date",
+        "default":"return date('y-m-d');"
+    }
+}

@@ -5,6 +5,16 @@ class lancamento{
     public static function init(){
         self::$db = new wuuModel("Lancamento", json_decode( file_get_contents(__DIR__.'/../schemas/lancamento.json') ));
     }
+    public static function getItem($id){
+        self::init();
+        self::$db
+            ->where([
+                ["itemid", "=", $id]
+            ])
+            ->by('_id')
+            ->order("DESC");
+        return self::$db->findAll();
+    }
     public static function getMeta($id){
         self::init();
         self::$db
@@ -129,6 +139,7 @@ class lancamento{
             ->set("init",   $init);
         if(isset($arr["contaid"]))  self::$db->set("contaid",  $arr["contaid"]);
         if(isset($arr["metaid"]))   self::$db->set("metaid",  $arr["metaid"]);
+        if(isset($arr["itemid"]))   self::$db->set("itemid",  $arr["itemid"]);
         if(isset($arr["data"]))     self::$db->set("data",  $arr["data"]);
         if(isset($arr["mes"]))      self::$db->set("mes",   $arr["mes"]);
         if(isset($arr["ano"]))      self::$db->set("ano",   $arr["ano"]);

@@ -6,7 +6,7 @@ require_once 'wuuDB/autoload.php';
 /**
  * true para habilitar banco de dados localhost para desenvolvimento
  */
-if(true){
+if(false){
     wuuDB::mysql();
     wuuDB::setDatabase("cfe");
 }else{

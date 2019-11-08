@@ -22,7 +22,8 @@ class lista{
             ["_id",  "=", $id],
         ]);
         $lista = self::$db->find();
-        // foreach($lista as $k => $lista) $lista[$k]["itens"] = lancamento::getItem($lista["_id"]);
+        $lista["itens"] = item::getByListaID($lista["_id"]);
+        foreach($lista["itens"] as $k => $it) $lista["itens"][$k]["pago"] = lancamento::getItem($it["_id"]);
         return $lista;
     }
     public static function getByUserID($id, $limit){

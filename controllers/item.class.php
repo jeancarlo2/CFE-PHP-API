@@ -25,7 +25,7 @@ class item{
         $lista = self::$db->find();
         return $lista;
     }
-    public static function getByListaID($id, $limit){
+    public static function getByListaID($id, $limit=0){
         self::init();
         self::$db
             ->where([

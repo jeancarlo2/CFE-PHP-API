@@ -1,0 +1,11 @@
+{
+    "owner":{
+        "type":"number"
+    },
+    "to":{
+        "type":"string"
+    },
+    "listaid":{
+        "type":"number"
+    }
+}
